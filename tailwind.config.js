@@ -6,6 +6,14 @@ module.exports = {
     ],
     theme: {
       extend: {},
+      colors:{
+        primary:"#49675F",
+        secondary:"#e5e7eb",
+        background_secondary:"#9DABAF",
+        text_secondary:"#f9fafb",
+        btn_primary:"#619E8C",
+        footer:"#48776A"
+      }
     },
     plugins: [
       require('@tailwindcss/forms')
