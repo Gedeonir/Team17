@@ -2,6 +2,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "../pages/Homepage";
+import AppointmentForm from "../pages/AppointmentForm";
 
 
 const AppRoutes = (prop) => {
@@ -10,6 +11,7 @@ const AppRoutes = (prop) => {
       <div className="">
         <Routes>
           <Route path="/" index element={<Homepage />} />
+          <Route path="/appointment-form" index element={<AppointmentForm/>} />
         </Routes>
       </div>
     );

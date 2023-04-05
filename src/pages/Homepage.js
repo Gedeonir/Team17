@@ -1,11 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'
+import {CiSearch} from 'react-icons/ci'
+import {BiArrowBack} from 'react-icons/bi'
+import {NavBarBottom}  from '../components/Navbar'
 
 export default function Homepage() {
+
   return (
     <div className='w-full'>
         <Navbar/>
+        <NavBarBottom/>
         <div className='min-h-screen relative w-full'>
             <div className='h-96 w-full text-center relative bg-[url(https://api.brusselstimes.com/wp-content/uploads/2021/02/rwanda-hospital-c-city-of-kigali.jpg)] bg-cover bg-no-repeat'>
                 <div className='w-full h-96 bg-opacity-40 py-24 text-3xl lg:text-6xl font-bold px-12 text-text_secondary tracking-wide bg-primary'>
