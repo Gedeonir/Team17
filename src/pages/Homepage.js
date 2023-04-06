@@ -30,7 +30,9 @@ export default function Homepage() {
                         <p>Quality, affordable, quick medical care is just a call away on a short dial 8000. .</p>
                     </div>
                     <div className='mt-4'>
+                    <a href='Doctors'>
                         <button className='border border-secondary border-opacity-50 rounded-lg text-secondary  px-4 py-2 hover:bg-opacity-80 transition-all duration-200 delay-200'>Book an apointment</button>
+                        </a>
                     </div>
                 </div>
                 <div className='h-64 rounded-lg drop-shadow-md shadow py-4 px-4 text-primary bg-text_secondary'>
