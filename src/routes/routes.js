@@ -6,6 +6,7 @@ import AppointmentForm from "../pages/AppointmentForm";
 import Doctors from "../pages/Doctors";
 
 
+import UsersHome from "../pages/UsersHome";
 
 const AppRoutes = (prop) => {
   
@@ -16,6 +17,8 @@ const AppRoutes = (prop) => {
           <Route path="/appointment-form" index element={<AppointmentForm/>} />
           <Route path="/Doctors" element={<Doctors/>} />
           <Route path="/Doctors/1/details"/>
+          <Route path="/appointment-form" element={<AppointmentForm/>} />
+          <Route path="dashboard" element={<UsersHome/>}></Route>
         </Routes>
       </div>
     );
