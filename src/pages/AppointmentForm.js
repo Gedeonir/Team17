@@ -6,6 +6,8 @@ import {RiHotelBedLine} from "react-icons/ri"
 import Data from '../components/Data';
 
 export default function AppointmentForm() {
+    const [open,setOpen]=React.useState(false);
+    const [department,setDepartment]=React.useState("")
   return (
     <div className='w-full'>
         <Navbar/>
@@ -26,11 +28,18 @@ export default function AppointmentForm() {
                     </div>
                     <div>
                         <label className='text-background_secondary font-bold'>Email</label>
-                        <input type='text' name="search" className='w-full bg-secondary outline-none border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
+                        <input type='email' name="search" className='w-full bg-secondary outline-none border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
                     </div>
-                    <div>
+                    <div className='relative'>
                         <label className='text-background_secondary font-bold'>Department</label>
-                        <input type='text' name="search" className='w-full bg-secondary outline-none border-secondary' placeholder='General medecine' onChange={(e)=>{setSearchWord(e.target.value)}} disabled/>
+                        <div  className='w-full bg-secondary outline-none border-secondary py-2 px-4 text-primary' placeholder='General medecine' onChange={(e)=>{setSearchWord(e.target.value)}} onClick={()=>setOpen(!open)}>{department===""?<p>Choose department</p>:<p>{department}</p>}</div>
+                        {open&& <div id="dropdown" className="z-10 absolute text-primary w-full rounded-b-lg rounded-l-lg  shadow drop-shadow bg-text_secondary ">
+                            <ul className="py-2 text-sm text-gray-900 dark:text-gray-300" aria-labelledby="dropdownDefaultButton">
+                                <li className='cursor-pointer py-2  px-4 hover:bg-secondary' onClick={()=>{setDepartment("General medecine"); setOpen(!open)}}>General medecine</li>
+                                <li className='cursor-pointer py-2  px-4 hover:bg-secondary' onClick={()=>{setDepartment("Genycologist");setOpen(!open)}}>Genycologist</li>
+                                <li className='cursor-pointer py-2  px-4 hover:bg-secondary' onClick={()=>{setDepartment("Neurosurgery"),setOpen(!open)}}>Neurosurgery</li>
+                            </ul>
+                        </div>}
                     </div>
                     <div className='col-span-2 mt-4'>
                      <textarea id="comment" rows="4" className="px-2 w-full text-sm text-text_secondary drop-shadow bg-secondary border-0 " placeholder="Any clarifications......" required></textarea>

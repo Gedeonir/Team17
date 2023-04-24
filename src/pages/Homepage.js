@@ -15,8 +15,8 @@ export default function Homepage() {
         <NavBarBottom/>
         <div className='min-h-screen relative w-full'>
             <div className='h-96 w-full text-center relative bg-[url(https://api.brusselstimes.com/wp-content/uploads/2021/02/rwanda-hospital-c-city-of-kigali.jpg)] bg-cover bg-no-repeat'>
-                <div className='w-full h-96 bg-opacity-40 py-24 text-3xl lg:text-6xl font-bold px-12 text-text_secondary tracking-wide bg-primary'>
-                    <h1>A SevenTeen for all <br/> Your medical needs</h1>
+                <div className='w-full h-96 bg-opacity-80 py-24 text-3xl lg:text-5xl font-bold lg:px-12 text-text_secondary tracking-wide bg-primary'>
+                    <h1>Doctor Appointment System</h1>
                 </div>
 
             </div>
