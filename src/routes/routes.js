@@ -5,6 +5,7 @@ import Homepage from "../pages/Homepage";
 import AppointmentForm from "../pages/AppointmentForm";
 import Doctors from "../pages/Doctors";
 
+import UsersHome from "../pages/UsersHome";
 
 import UsersHome from "../pages/UsersHome";
 
