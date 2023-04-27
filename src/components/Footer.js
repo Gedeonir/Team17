@@ -14,26 +14,26 @@ export default function Footer() {
                     <img src={Logos} className='w-full h-full' alt='logo'/>
                 </div>
             </div>
-            <div className='w-full'>
-                <h3 className='font-bold mb-3'>Quick links</h3>
+            <div class='w-full'>
+                <h3 class='font-bold mb-3'>Quick links</h3>
                 <ul>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Who we are?</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Who we are?</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our services</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our services</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our doctors</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our doctors</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Book Appointment</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Book Appointment</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> NewsLetter</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> NewsLetter</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Contact us</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Contact us</Link>
                     </li>
                 </ul>
             </div>
@@ -57,22 +57,22 @@ export default function Footer() {
                 <h3 className='font-bold mb-3'>Our service</h3>
                 <ul className='grid justify-between'>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Who we are?</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Who we are?</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our services</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our services</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our doctors</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Our doctors</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Book Appointment</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Book Appointment</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> NewsLetter</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> NewsLetter</Link>
                     </li>
                     <li>
-                        <Link className='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Contact us</Link>
+                        <Link class='flex gap-2 justify-start'><BsDashLg size={30} color='#4ade80'/> Contact us</Link>
                     </li>
                 </ul>  
             </div>
@@ -86,7 +86,7 @@ export default function Footer() {
             </div>
             
         </div>
-        <div className='bg-footer w-full px-4 py-4 text-center text-secondary '>
+        <div class='bg-footer w-full px-4 py-4 text-center text-secondary '>
             SevenTeen hospital &copy; 2023
         </div>
     </div>

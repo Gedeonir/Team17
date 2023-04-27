@@ -53,15 +53,15 @@ export default function Navbar() {
             </div>
             <div className='flex justify-start gap-2 border-r border-secondary border-opacity-10 font-bold  flex-wrap lg:text-md'>
                 <GiAmbulance size={24}/>
-                <div className='lg:flex justify-start'>
+                <div class='lg:flex justify-start'>
                     <p>+2507888888888</p>
-                    <p className='text-xs opacity-60 py-1'>(Emergency Services)</p>
+                    <p class='text-xs opacity-60 py-1'>(Emergency Services)</p>
                 </div>
                 
             </div>
             <div className='flex justify-start gap-2 border-r border-secondary border-opacity-10 font-bold '>
                 <BsVirus size={24}/>
-                <p className='text-sm'>COVID-19 UPDATES</p>
+                <p class='text-sm'>COVID-19 UPDATES</p>
             </div>
             <div className='flex justify-between gap-2 border-secondary border-opacity-10 font-bold'>
                 <FaFacebookF size={20} className='border rounded-full text-sm p-1'/>
