@@ -9,22 +9,22 @@ export default function AppointmentForm() {
     const [open,setOpen]=React.useState(false);
     const [department,setDepartment]=React.useState("")
   return (
-    <div className='w-full'>
+    <div class='mx-12'>
         <Navbar/>
         <NavBarBottom/>
-        <div className='py-12 bg-background_secondary px-8 mb-4'>
-            <h1 className='font-bold text-2xl text-text_secondary'>Make Appoinment</h1>
+        <div class='py-12 bg-background_secondary px-8 mb-4'>
+            <h1 class='font-bold text-2xl text-text_secondary'>Make Appoinment</h1>
         </div>
-        <div className='lg:px-48  w-full'>
-            <form className='px-8'>
-                <div className='lg:grid lg:grid-cols-2 sm:block gap-4 mb-3'>
+        <div class='lg:px-48  w-full'>
+            <form class='px-8'>
+                <div class='lg:grid lg:grid-cols-2 sm:block gap-4 mb-3'>
                     <div>
-                        <label className='text-background_secondary font-bold'>Firstname</label>
-                        <input type='text' name="search" className='w-full bg-secondary outline-none border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
+                        <label class='text-background_secondary font-bold'>Firstname</label>
+                        <input type='text' name="search" class='w-full bg-secondary outline-none border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
                     </div>
                     <div>
-                        <label className='text-background_secondary font-bold'>Lastname</label>
-                        <input type='text' name="search" className='w-full bg-secondary outline-none border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
+                        <label class='text-background_secondary font-bold'>Lastname</label>
+                        <input type='text' name="search" class='w-full bg-secondary outline-none border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
                     </div>
                     <div>
                         <label className='text-background_secondary font-bold'>Email</label>
@@ -41,11 +41,11 @@ export default function AppointmentForm() {
                             </ul>
                         </div>}
                     </div>
-                    <div className='col-span-2 mt-4'>
-                     <textarea id="comment" rows="4" className="px-2 w-full text-sm text-text_secondary drop-shadow bg-secondary border-0 " placeholder="Any clarifications......" required></textarea>
+                    <div class='col-span-2 mt-4'>
+                     <textarea id="comment" rows="4" class="px-2 w-full text-sm text-text_secondary drop-shadow bg-secondary border-0 " placeholder="Any clarifications......" required></textarea>
                     </div>
                 </div>
-                <button className='px-2 py-2 bg-btn_primary text-secondary'>Send</button>
+                <button class='px-2 py-2 bg-btn_primary text-secondary'>Send</button>
 
                
 
