@@ -12,8 +12,10 @@ module.exports = {
         background_secondary:"#9DABAF",
         text_secondary:"#f9fafb",
         btn_primary:"#619E8C",
-        footer:"#48776A",
-        text_primary:"#047857"
+        bar_yellow:"#F1B561",
+        bar_blue:"#396CF0",
+        danger:"#ef4444",
+        footer:"#48776A"
       }
     },
     plugins: [

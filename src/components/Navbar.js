@@ -13,11 +13,11 @@ export function NavBarBottom(){
     const [searchWord,setSearchWord] = React.useState("");
 
     return(
-        <div className='w-full bg-text_secondary sticky top-0 z-10 lg:px-8 grid  grid-cols-2 lg:grid-cols-6 gap-2 bg-opacity-90 py-2'>
+        <div className='w-full bg-text_secondary sticky top-0 z-10 lg:px-8 px-2 grid  grid-cols-2 lg:grid-cols-6 gap-2 py-2'>
             <div className='w-24 h-8'> 
                 <img src={Logo} className='w-full h-full' alt='logo'/>
             </div>
-            <ul className='col-span-3 lg:px-4 flex justify-start gap-4 font-bold text-primary'>
+            <ul className='col-span-3 lg:px-4 lg:flex justify-start gap-4 font-bold text-primary hidden'>
                 <li className='hover:text-btn_primary'>
                     <Link to="/" className='flex gap-2 justify-start px-2 py-2'> Home</Link>
                 </li>
@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <div className='w-full relative'>
-        <div className='lg:px-8 grid  grid-cols-2 lg:grid-cols-4 gap-2 justify-between py-2 bg-primary text-secondary'>
+        <div className='lg:px-8 px-2 grid  grid-cols-2 lg:grid-cols-4 gap-2 justify-between py-2 bg-primary text-secondary'>
             <div className='flex justify-start gap-2 border-r border-secondary border-opacity-10 font-bold  flex-wrap'>
                 <AiOutlinePhone size={24}/>
                 <div className='lg:flex justify-start'>
