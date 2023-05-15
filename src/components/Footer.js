@@ -6,7 +6,7 @@ import {BsDashLg} from 'react-icons/bs'
 export default function Footer() {
   return (
     <div className='bg-primary text-secondary'>
-        <div className='grid lg:grid-cols-5 sm:grid-cols-1 gap-8 py-8 px-8 w-full h-full'>
+        <div className='grid lg:grid-cols-5 sm:grid-cols-1 gap-8 py-8 lg:px-8 px-2 w-full h-full'>
             <div className='w-full'>
                 <h3 className='font-bold mb-3'>About SevenTeen</h3>
                 <p className='text-justify'>Seeventeen is a private hospital located in the capital city of Rwanda. We are dedicated to providing our patients with the best care at all times during their hospital stay.</p>

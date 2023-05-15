@@ -9,7 +9,7 @@ export default function AppointmentForm() {
     const [open,setOpen]=React.useState(false);
     const [department,setDepartment]=React.useState("")
   return (
-    <div class='mx-12'>
+    <div>
         <Navbar/>
         <NavBarBottom/>
         <div class='py-12 bg-background_secondary px-8 mb-4'>
@@ -41,8 +41,9 @@ export default function AppointmentForm() {
                             </ul>
                         </div>}
                     </div>
-                    <div class='col-span-2 mt-4'>
-                     <textarea id="comment" rows="4" class="px-2 w-full text-sm text-text_secondary drop-shadow bg-secondary border-0 " placeholder="Any clarifications......" required></textarea>
+                    <div>
+                        <label className='text-background_secondary font-bold'>Choose data</label>
+                        <input type='date' name="search" className='w-full bg-secondary outline-none border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
                     </div>
                 </div>
                 <button class='px-2 py-2 bg-btn_primary text-secondary'>Send</button>
