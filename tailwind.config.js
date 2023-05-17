@@ -15,7 +15,9 @@ module.exports = {
         bar_yellow:"#F1B561",
         bar_blue:"#396CF0",
         danger:"#ef4444",
-        footer:"#48776A"
+        footer:"#48776A",
+        text_primary:"#047857",
+        admin_primary:" #000000"
       }
     },
     plugins: [

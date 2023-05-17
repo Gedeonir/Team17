@@ -8,7 +8,7 @@ import DoctorsList from '../components/DoctorsList'
 export default function Doctors() {
 
   return (
-    <div className='w-full'>
+    <div class='w-full'>
          
         <Navbar/>
         <NavBarBottom/>
