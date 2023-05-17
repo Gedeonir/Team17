@@ -43,8 +43,8 @@ export default function UsersHome() {
                 </div>
 
             </div>
-            <div className='grid grid-cols-8'>
-                <div class=" col-span-5 relative flex flex-col items-center w-full max-w-screen-md p-4 pb-6 bg-white rounded-lg sm:p-8">
+            <div className='grid lg:grid-cols-8'>
+                <div class=" lg:col-span-5 relative flex flex-col items-center w-full max-w-screen-md p-4 pb-6 bg-white rounded-lg sm:p-8">
                     <div className='lg:flex justify-between text-primary w-full mb-3'>
                         <div className='flex justify-start gap-4 flex-wrap'>
                             <h2 className='text-xl font-medium'>Appointments by gender</h2>
@@ -190,7 +190,7 @@ export default function UsersHome() {
                         </div>
                     </div>
                 </div>
-                <div className='col-span-3 bg-text_secondary p-16'>
+                <div className='lg:col-span-3 bg-text_secondary p-16'>
                     <div className='w-full h-full'>
 
                     </div>

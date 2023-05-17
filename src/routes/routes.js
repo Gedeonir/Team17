@@ -4,18 +4,15 @@ import { Routes, Route } from "react-router-dom";
 import Homepage from "../pages/Homepage";
 import AppointmentForm from "../pages/AppointmentForm";
 import Doctors from "../pages/Doctors";
-<<<<<<< Updated upstream
 import UsersHome from "../pages/UsersHome";
 import DoctorsListUsers from "../pages/DoctorsListUsers";
 import AppointmentsLists from "../pages/AppointmentsLists";
 import DoctorDetails from "../pages/DoctorDetails";
 import Departments from "../pages/Departments";
-=======
 // import UsersHome from "../pages/UsersHome";
 import UwaseDetails from "../Details/UwaseDetails";
 import Login from "../components/Login";
 import DashboardLayout from "../components/DashboardLayout";
->>>>>>> Stashed changes
 
 const AppRoutes = (prop) => {
   

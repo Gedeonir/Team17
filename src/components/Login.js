@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Admin from '../img/Admin.png'
 import { useNavigate } from "react-router-dom";
-
+import { FaClosedCaptioning } from "react-icons/fa";
+import { Loading2 } from "./Loading";
 
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [Loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
 
@@ -20,7 +22,7 @@ const Login = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setLoading(true);
     // Call API endpoint with email and password
     const response = await fetch('https://doctorsappointment-production.up.railway.app/api/v1/users/login', {
       method: 'POST',
@@ -32,11 +34,14 @@ const Login = () => {
   })
   const data = await response.json();
   if (response.ok) {
+    localStorage.setItem("token",data.token);
     // Login successful, navigate to dashboard
-    navigate('/DashboardLayout');
+    setLoading(false)
+    navigate('/dashboard');
    
   } else {
     // Login failed, display error message
+    setLoading(false)
     console.log(data.message);
   }
     }
@@ -50,14 +55,15 @@ const Login = () => {
        
         
       </div>
-      <div class="bg-primary  flex flex-col justify-center w-1/2 h-full p-10 absolute top-0 bottom-0 right-0 bg-opacity-90 ">
-      <h1 class="text-2xl font-bold mb-10 text-text_secondary text-center">Welcome to Doctor Appointment</h1>
+      <div class="bg-primary  flex flex-col justify-center lg:w-1/2 w-full h-full lg:p-10 p-5 absolute top-0 bottom-0 right-0 bg-opacity-90 ">
+      <h1 class="text-2xl font-bold mb-10 text-text_secondary lg:text-center">Welcome to Doctor Appointment</h1>
         
-        <div class="bg-secondary w-4/5 shadow rounded-2xl mb-20 mx-auto">
+        <div class="bg-secondary lg:w-4/5 w-full shadow rounded-2xl mb-20 mx-auto">
 
-        <form onSubmit={handleSubmit}  class="flex-justify-between px-8 py-8 text-primary ">
+        <form onSubmit={handleSubmit}  class="flex-justify-between lg:px-8 px-2 py-8 text-primary ">
 
         <h1 class=" text-2xl font-bold mb-6 text-center">Login as an Admin User</h1>
+        {Loading && <Loading2 message="Signing in......."/>}
           <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" htmlFor="email">
               Email
