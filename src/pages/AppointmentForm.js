@@ -15,14 +15,14 @@ import moment from 'moment';
 import 'moment-range';
 import { createAppointments } from '../redux/Action/AppointmentsAction';
 
-function generateTimeSlots() {
+function generateTimeSlots(minutes) {
     const start = moment().startOf('day').startOf('day').hours(8);
     const end = moment().endOf('day').startOf('day').hours(17);
     const timeSlots = [];
 
     while (start.isBefore(end)) {
       timeSlots.push(start.format('h:mm A'));
-      start.add(30, 'minutes');
+      start.add(minutes||15, 'minutes');
     }
 
     return timeSlots;
@@ -30,7 +30,7 @@ function generateTimeSlots() {
 
 
 function AppointmentForm(props) {
-    const [open,setOpen]=React.useState(false);
+    const [minutes,setMinutes]=React.useState(null);
     const [department,setDepartment]=React.useState("")
     const [openDepartments,setOpenDepartments]=React.useState(false);
     const [DoctorId,setDoctorId]=React.useState("");
@@ -64,7 +64,7 @@ function AppointmentForm(props) {
         props.fetchAllDepartments();
     },[]);
 
-    const day=new Date(formData?.sessionDate).toLocaleDateString("en-CA",{ weekday: 'long' })||"Monday";
+    const day=new Date(formData?.sessionDate).toLocaleDateString("en-CA",{ weekday: 'long' });
 
 
     const filterDoctors = props?.data?.allDoctors?.resp?.data?.doctors.filter((doctor)=>{
@@ -73,7 +73,7 @@ function AppointmentForm(props) {
 
 
 
-    const timeSlots = generateTimeSlots();
+    const timeSlots = generateTimeSlots(minutes);
 
     const handleSend=()=>{
         const reg = new RegExp("^((072|078|073))[0-9]{7}$", "i");
@@ -99,7 +99,7 @@ function AppointmentForm(props) {
             props.createAppointments(DoctorId,formData)
         }
     }
-    console.log(props);
+    console.log(minutes);
   return (
     <div>
         <Navbar/>
@@ -174,6 +174,7 @@ function AppointmentForm(props) {
                                             <li key={department._id} className='cursor-pointer hover:bg-primary hover:bg-opacity-10 duration-300 ease-in-out px-4 py-2' 
                                             onClick={() =>{
                                                 setDepartment(department.departmentName)
+                                                setMinutes(department.sessionDuration)
                                                 setOpenDepartments(!openDepartments)
                                             }}>{department.departmentName}</li>
                                         ))}

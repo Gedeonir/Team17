@@ -21,7 +21,6 @@ function Departments(props) {
     const records=[1,2,3,4,5,6,7,8,9,10]
     const [formData,setFormData]=useState({
         departmentName:"",
-        fees:"",
         session_lenght:""
     })
 
@@ -93,19 +92,17 @@ function Departments(props) {
                 <FeedBack error={props?.data?.createDepartment?.error} success={props?.data?.createDepartment?.success} errorMsg={props?.data?.createDepartment?.error?.response?.data?.message||null} successMsg={props?.data?.createDepartment?.resp?.message||null}/>
                 <FeedBack error={props?.data?.updateDepartment?.error} success={props?.data?.updateDepartment?.success} errorMsg={props?.data?.updateDepartment?.error?.response?.data?.message||null} successMsg={props?.data?.updateDepartment?.resp?.message||null}/>
                 <input type='text' name='name' value={ID} placeholder='ID' className='px-2 py-2 rounded-lg' onChange={(e)=>{getID(e.target.value)}} hidden/>
-                <div className='grid lg:grid-cols-3 gap-2 text-primary mb-3 '>
+                <div className='grid lg:grid-cols-2 gap-2 text-primary mb-3 '>
                     <div className='grid'>
                         <label>DepartmentName</label>
                         <input type='text' name='name' value={formData.departmentName} placeholder='Department name' className='px-2 py-2 rounded-lg' onChange={(e)=>{setFormData({...formData,departmentName:e.target.value})}} required/>
                     </div>
-                    <div className='grid'>
-                        <label>Department fees</label>
-                        <input type='text' name='fees' value={formData.fees} placeholder='Fees' className='px-2 py-2 rounded-lg' onChange={(e)=>{setFormData({...formData,fees:e.target.value})}} required/>
-                    </div>
+
                     <div className='grid'>
                         <label>Session duration(Minutes)</label>
                         <input type='number' name='session_length' value={formData.session_lenght} placeholder='Minutes of session' className='px-2 py-2 rounded-lg' onChange={(e)=>{setFormData({...formData,session_lenght:e.target.value})}} required/>
                     </div>
+                    
                 </div>
                 {button!=="Update"?(<button className='px-4 max-w-sm rounded-md bg-primary hover:bg-opacity-50 transition-all delay-100 duration-700 text-secondary py-2 lg:w-1/4 w-full' onClick={()=>handleSubmit()}>Add</button>)
                 :
@@ -133,7 +130,6 @@ function Departments(props) {
                                 <div className=''>#ID</div>
                                 <div className=' col-span-4'>Department</div>
                                 <div className=' col-span-2'>Session Duration</div>
-                                <div className=''>Fees</div>
                                 <div className='col-span-2'>Actions</div>
                             </div>
                             {props?.data?.allDepartments?.resp?.data?.departments.length===0?(<p className='text-center'>No doctors found</p>):(
@@ -143,7 +139,6 @@ function Departments(props) {
                                             <div className='my-2'>{index+1}</div>
                                             <div className=' col-span-4'>{department.departmentName}</div>
                                             <div className=' col-span-2'>{department.sessionDuration} Min</div>
-                                            <div className=''>{department.fees} RF</div>
                                             <div className='flex justify-start gap-4 overflow-x-auto col-span-2'>
                                                 <FaEdit size={25} className='cursor-pointer hover:opacity-50 duration-100 ease-in-out' onClick={()=>handleGetDepartment(department._id)}/>
                                                 <AiFillDelete size={25} className='text-danger cursor-pointer hover:opacity-50 duration-100 ease-in-out' onClick={()=>handleOpenDeleteModal(department._id,department.departmentName)}/>

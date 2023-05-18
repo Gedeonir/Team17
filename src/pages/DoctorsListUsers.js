@@ -13,6 +13,7 @@ import { fetchAllDepartments } from '../redux/Action/DepartmentAction'
 import {Loading2} from '../components/Loading'
 import ErrorResponse from '../components/ErrorResponse'
 import FeedBack from '../components/FeedBack'
+import DefaultProfile from '../img/DefaultProfile.jpeg'
 
 
  function DoctorsListUsers(props) {
@@ -67,8 +68,6 @@ import FeedBack from '../components/FeedBack'
         }
     }
 
-    console.log(formData);
-
   return (
     <DashboardLayout setOpen={setOpen} open={open}>
         <div className='grid grid-cols-10 gap-4 text-primary lg:px-8 px-2'>
@@ -93,7 +92,7 @@ import FeedBack from '../components/FeedBack'
                         <div className='px-2 rounded-lg py-4'>
                             <div className='grid lg:grid-cols-6 gap-2 mb-3 w-full'>
                                 <div className="overflow-hidden h-24 w-24 rounded-full mx-auto">
-                                    <img src={Uwase} className='h-full w-full object-cover rounded-full'/>
+                                    <img src={DefaultProfile} className='h-full w-full object-cover rounded-full'/>
                                 </div>
                                 <div className='lg:col-span-3 flex justify-between'>
                                     <div>
@@ -205,6 +204,7 @@ import FeedBack from '../components/FeedBack'
                                             gender: e.target.value,
                                             })
                                         }>
+                                            <option>Please select Gender</option>
                                             <option>Male</option>
                                             <option>Female</option>
                                             <option>I prefer not to say</option>

@@ -3,7 +3,7 @@ import counter from "./counter";
 import { LoginReducer } from "./LoginReducer";
 import { fetchAllDepartmentsReducer,createDepartmentReducer,updateDepartmentReducer, deleteDepartmentReducer, getOneDepartmentReducer} from "./fetchDepartmentReducer";
 import { fetchAllAppointmentsReducer,createAppointmentReducer } from "./AppointmentsReducer";
-import { createDoctorReducer, fetchAllDoctorssReducer } from "./DoctorsReducer";
+import { createDoctorReducer, deleteDoctorReducer, fetchAllDoctorssReducer, getOneDoctorReducer } from "./DoctorsReducer";
 
 const rootReducer = combineReducers({
   counter: counter,
@@ -18,8 +18,9 @@ const rootReducer = combineReducers({
   createAppointment:createAppointmentReducer,
 
   allDoctors:fetchAllDoctorssReducer,
-  registerDoctor:createDoctorReducer
-
+  registerDoctor:createDoctorReducer,
+  deleteDoctor:deleteDoctorReducer,
+  oneDoctor:getOneDoctorReducer
 
 });
 
