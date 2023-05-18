@@ -6,13 +6,44 @@ import {GiNurseMale} from "react-icons/gi";
 import {AiOutlineCalendar} from "react-icons/ai"
 import {MdPendingActions} from "react-icons/md"
 import {RxSwitch} from "react-icons/rx"
-import AddNewDoctorModal from './addNewDoctorModal';
 import {useLocation} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
+function getToken() {
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    return userToken
+  }
 
 export default function DashboardLayout({children,open,setOpen}) {
     const [status,setStatus] =React.useState("")
     const [page,setPage] =React.useState("");
     const [doctorModal,setOpenDoctorModal]=React.useState(false);
+    const token = getToken();
+    const navigate=useNavigate()
+
+    const parseToken=(jwtToken)=>{
+        try {
+          return JSON.parse(atob(jwtToken.split('.')[1]));
+        } catch (error) {
+          return null
+        }
+      }
+
+
+    React.useEffect(() => {
+        if (!token) {
+          navigate("/login");
+          console.log("You must sign in first!")
+        }else{
+          const decodedJwt = parseToken(token);
+          if (decodedJwt.exp * 1000 < Date.now()) {
+            sessionStorage.clear();
+            navigate("/login");
+            console.log("Your session expired!");
+          }
+        }
+      }, [token])
 
     return (
         <div className='w-full min-h-screen max-h-screen overflow-hidden  bg-text_secondary'>

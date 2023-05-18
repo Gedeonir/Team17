@@ -57,7 +57,7 @@ export default function AppointmentsLists() {
                                 <div className='py-1  col-span-2'>IRAFASHA GEDEON</div>
                                 <div className='py-1  col-span-2'>General medecine</div>
                                 <div className='py-1  col-span-2 flex justify-start gap-2'>
-                                    <div class="relative flex items-end overflow-hidden h-6 w-6 rounded-full ">
+                                    <div className="relative flex items-end overflow-hidden h-6 w-6 rounded-full ">
                                         <img src={Uwase} className='h-full w-full rounded-full'/>
                                     </div>
                                     Dr xy
@@ -71,27 +71,27 @@ export default function AppointmentsLists() {
 
                     
                     <nav aria-label="Pagination" className='my-4'>
-                        <ul class="inline-flex -space-x-px">
+                        <ul className="inline-flex -space-x-px">
                             <li>
-                            <a href="#" class="px-3 ml-0 leading-tight text-primary hover:text-secondary bg-white border border-primary rounded-l-lg hover:bg-primary  ">Previous</a>
+                            <a href="#" className="px-3 ml-0 leading-tight text-primary hover:text-secondary bg-white border border-primary rounded-l-lg hover:bg-primary  ">Previous</a>
                             </li>
                             <li>
-                            <a href="#" class="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary">1</a>
+                            <a href="#" className="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary">1</a>
                             </li>
                             <li>
-                            <a href="#" class="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary  ">2</a>
+                            <a href="#" className="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary  ">2</a>
                             </li>
                             <li>
-                            <a href="#" aria-current="page" class="px-3 text-secondary border border-primary bg-primary hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                            <a href="#" aria-current="page" className="px-3 text-secondary border border-primary bg-primary hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
                             </li>
                             <li>
-                            <a href="#" class="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary  ">4</a>
+                            <a href="#" className="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary  ">4</a>
                             </li>
                             <li>
-                            <a href="#" class="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary  ">5</a>
+                            <a href="#" className="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary hover:bg-primary  ">5</a>
                             </li>
                             <li>
-                            <a href="#" class="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary rounded-r-lg hover:bg-primary  ">Next</a>
+                            <a href="#" className="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary rounded-r-lg hover:bg-primary  ">Next</a>
                             </li>
                         </ul>
                     </nav>

@@ -1,6 +1,6 @@
 import React from 'react'
-import loading from '../Assets/loading.gif'
-import loading2 from '../Assets/loading2.webp'
+import loading from '../assets/loading.gif'
+import loading2 from '../assets/loading2.webp'
 
 
 export default function Loading(props) {

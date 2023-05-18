@@ -22,7 +22,7 @@ const AppRoutes = (prop) => {
           <Route path="/" index element={<Homepage />} />
           <Route path="/AppointmentForm" element={<AppointmentForm/>} />
           <Route path="/Doctors" element={<Doctors/>} />
-          <Route path="/Doctors/1/details" element={<DoctorDetails/>}/>
+          <Route path="/Doctors/:id/details" element={<DoctorDetails/>}/>
           <Route path="/appointment-form" element={<AppointmentForm/>} />
           <Route path="dashboard" element={<UsersHome/>}></Route>
           <Route path="/doctorsUsers" element={<DoctorsListUsers/>}></Route>

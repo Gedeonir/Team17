@@ -4,7 +4,7 @@ import {RiHotelBedLine} from "react-icons/ri"
 
 export default function Data() {
   return (
-    <div class='lg:flex justify-center gap-8 bg-secondary w-full px-2 py-4 mt-4 bg-opacity-50 drop-shadow-lg shadow-5xl'>
+    <div class='lg:flex justify-center gap-8 bg-text_secondary w-full px-2 py-4 bg-opacity-50 drop-shadow-lg shadow-5xl relative'>
         <div class='flex justify-start gap-2 py-2  border-r border-background_secondary px-4 border-opacity-30'>
             <div><GiBed class=' font-normal text-primary' size={30}/></div>
             <div class='block'>
