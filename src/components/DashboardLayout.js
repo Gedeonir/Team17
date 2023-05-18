@@ -10,9 +10,8 @@ import {useLocation} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 function getToken() {
-    const tokenString = sessionStorage.getItem('token');
-    const userToken = JSON.parse(tokenString);
-    return userToken
+    const tokenString = localStorage.getItem('token');
+    return tokenString
   }
 
 export default function DashboardLayout({children,open,setOpen}) {
@@ -43,13 +42,18 @@ export default function DashboardLayout({children,open,setOpen}) {
         }
       }, [token])
 
+      const handleLogout=()=>{
+        localStorage.removeItem("token");
+        navigate("/login",{state:{message:"You have been logged out"}})
+      }
+
     return (
         <div className='w-full min-h-screen max-h-screen overflow-hidden  bg-text_secondary'>
             <div className='flex justify-between lg:px-8 px-2 py-2 sticky z-10 top-0 bg-text_secondary'>
                 <div className='w-24 h-8'> 
                     <img src={Logos} className='w-full h-full' alt='logo'/>
                 </div>
-                <button className='px-4 max-w-sm rounded-md bg-primary hover:bg-opacity-50 transition-all delay-100 duration-700 py-2 text-secondary'>Logout</button>
+                <button className='px-4 max-w-sm rounded-md bg-primary hover:bg-opacity-50 transition-all delay-100 duration-700 py-2 text-secondary' onClick={()=>handleLogout()}>Logout</button>
             </div>
             <div className='lg:grid grid-cols-6 w-full'>
                 <div className='px-8 py-4 fixed left-0 min-h-screen w-56 hidden lg:block'>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Admin from '../img/Admin.png'
 import { useNavigate } from "react-router-dom";
-import { FaClosedCaptioning } from "react-icons/fa";
+import { AiOutlineRollback } from "react-icons/ai";
 import { Loading2 } from "./Loading";
 import { BiErrorCircle } from 'react-icons/bi'
 import { useLocation } from "react-router-dom";
@@ -68,7 +68,11 @@ const Login = () => {
         
       </div>
       <div class="bg-primary  flex flex-col justify-center lg:w-1/2 w-full h-full lg:p-10 p-5 absolute top-0 bottom-0 right-0 bg-opacity-90 ">
-      <h1 class="text-2xl font-bold mb-10 text-text_secondary lg:text-center">Welcome to Doctor Appointment</h1>
+        <div className="text-text_secondary flex my-4 justify-start gap-2 cursor-pointer py-2" onClick={()=>navigate("/")}>
+          <AiOutlineRollback size={25}/>
+          <p>Back to home</p>
+        </div>
+        <h1 class="text-2xl font-bold mb-10 text-text_secondary lg:text-center">Welcome to Doctor Appointment</h1>
         
         <div class="bg-secondary lg:w-4/5 w-full shadow rounded-2xl mb-20 mx-auto">
 

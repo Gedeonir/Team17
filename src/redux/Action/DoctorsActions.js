@@ -57,36 +57,36 @@ export const createDoctors=(formBody)=>async(dispatch)=>{
 //     }
 // }
 
-// export const deleteDepartment=(id)=>async(dispatch)=>{
-//     try {
-//         dispatch({
-//             type:types.DELETE_DEPARTMENT_LOADING
-//         })
+export const deleteDoctor=(id)=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:types.DELETE_DOCTOR_LOADING
+        })
 
-//         const res=await axios.delete(`${process.env.BACKEND_URL}/departments/${id}`);
+        const res=await axios.delete(`${process.env.BACKEND_URL}/doctors/${id}`);
 
-//         dispatch({
-//             type:types.DELETE_DEPARTMENT_SUCCESS,
-//             payload:res.data
-//         })
-//     } catch (error) {
-//         dispatch({type:types.DELETE_DEPARTMENT_FAIL,payload:error})
-//     }
-// }
+        dispatch({
+            type:types.DELETE_DOCTOR_SUCCESS,
+            payload:res.data
+        })
+    } catch (error) {
+        dispatch({type:types.DELETE_DOCTOR_FAIL,payload:error})
+    }
+}
 
-// export const getOneDepartment=(id)=>async(dispatch)=>{
-//     try {
-//         dispatch({
-//             type:types.FETCH_ONE_DEPARTMENT_LOADING
-//         })
+export const getOneDoctor=(id)=>async(dispatch)=>{
+    try {
+        dispatch({
+            type:types.FETCH_ONE_DOCTOR_LOADING
+        })
 
-//         const res=await axios.get(`${process.env.BACKEND_URL}/departments/${id}`);
+        const res=await axios.get(`${process.env.BACKEND_URL}/doctors/${id}`);
 
-//         dispatch({
-//             type:types.FETCH_ONE_DEPARTMENT_SUCCESS,
-//             payload:res.data
-//         })
-//     } catch (error) {
-//         dispatch({type:types.FETCH_ONE_DEPARTMENT_FAIL,payload:error})
-//     }
-// }
+        dispatch({
+            type:types.FETCH_ONE_DOCTOR_SUCCESS,
+            payload:res.data
+        })
+    } catch (error) {
+        dispatch({type:types.FETCH_ONE_DOCTOR_FAIL,payload:error})
+    }
+}

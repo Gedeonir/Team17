@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import DashboardLayout from '../components/DashboardLayout'
 import {BsChevronCompactDown} from "react-icons/bs"
 import {RxDotFilled} from "react-icons/rx"
 import Uwase from '../img/Uwase.PNG'
+import { fetchAllAppointmentss } from '../redux/Action/AppointmentsAction'
+import { Loading2 } from '../components/Loading'
+import ErrorResponse from '../components/ErrorResponse'
+import { connect } from "react-redux";
+import DefaultProfile from '../img/DefaultProfile.jpeg'
 
-
-
-export default function AppointmentsLists() {
+function AppointmentsLists(props) {
     const [open,setOpen]=React.useState(false)
     const records=[1,2,3,4,5,6,7,8,9,10]
+
+    useEffect(()=>{
+        props.fetchAllAppointmentss()
+    },[props?.data?.createAppointment.success])
 
 
   return (
@@ -47,30 +54,38 @@ export default function AppointmentsLists() {
                         <div className='py-1  col-span-2'>Names</div>
                         <div className='py-1  col-span-2'>Department</div>
                         <div className='py-1  col-span-2'>Doctor</div>
-                        <div className='py-1 col-span-2'>Date</div>
+                        <div className='py-1'>Date</div>
                         <div className='py-1 '>Session</div>
+                        {/* <div className='py-1 '>Status</div> */}
                     </div>
-                    {records.map((record)=>{
-                        return(
-                            <div className='grid grid-cols-10 gap-2 text-primary hover:bg-background_secondary hover:bg-opacity-20 transition delay-100 duration-700 ease-in-out  px-2 py-1 relative cursor-pointer rounded-lg'>
-                                <div className='py-1 '>#{record}</div>
-                                <div className='py-1  col-span-2'>IRAFASHA GEDEON</div>
-                                <div className='py-1  col-span-2'>General medecine</div>
-                                <div className='py-1  col-span-2 flex justify-start gap-2'>
-                                    <div className="relative flex items-end overflow-hidden h-6 w-6 rounded-full ">
-                                        <img src={Uwase} className='h-full w-full rounded-full'/>
-                                    </div>
-                                    Dr xy
-                                </div>
-                                <div className='py-1 col-span-2'>10/04/2023</div>
-                                <div className='py-1 mr-2'>8:30-9:30</div>
-                                {/* <RxDotFilled size={24} className='absolute right-0 top-0'/> */}
-                            </div>
+                    {props?.data?.allAppointments?.loading?(<Loading2 message="Fetching appointments"/>):(
+                        props?.data?.allAppointments?.success?(
+                            props?.data?.allAppointments?.resp?.data?.allApointments.length===0?(<p className='text-center'>No departments found</p>):(
+                                props?.data?.allAppointments?.resp?.data?.allApointments.map((appointment,index)=>{
+                                    return(
+                                        <div className='grid grid-cols-10 gap-2 text-primary hover:bg-background_secondary hover:bg-opacity-20 transition delay-100 duration-700 ease-in-out  px-2 py-1 relative cursor-pointer rounded-lg'>
+                                            <div className='py-1 '>{appointment.document_id}</div>
+                                            <div className='py-1  col-span-2'>{appointment.firstName} {appointment.lastName}</div>
+                                            <div className='py-1  col-span-2'>{appointment.department}</div>
+                                            <div className='py-1  col-span-2 flex justify-start gap-2'>
+                                                <div className="relative flex items-end overflow-hidden h-6 w-6 rounded-full ">
+                                                    <img src={DefaultProfile} className='h-full w-full rounded-full'/>
+                                                </div>
+                                                {appointment.doctorName}
+                                            </div>
+                                            <div className='py-1'>{appointment.sessionDate}</div>
+                                            <div className='py-1 mr-2'>{appointment.sessionTime}</div>
+                                            {/* <div className='py-1 italic font-medium text-background_secondary'>{appointment.status}</div> */}
+                                            {/* <RxDotFilled size={24} className='absolute right-0 top-0'/> */}
+                                        </div>
+                                    )
+                                })
+                            )
+                        ):(
+                            <ErrorResponse code={props?.data?.allAppointments?.error?.code} message={props?.data?.allAppointments?.error?.message} retryFunction={props.fetchAllAppointmentss()}/>
                         )
-                    })}
-
-                    
-                    <nav aria-label="Pagination" className='my-4'>
+                    )}                    
+                    {/* <nav aria-label="Pagination" className='my-4'>
                         <ul className="inline-flex -space-x-px">
                             <li>
                             <a href="#" className="px-3 ml-0 leading-tight text-primary hover:text-secondary bg-white border border-primary rounded-l-lg hover:bg-primary  ">Previous</a>
@@ -94,7 +109,7 @@ export default function AppointmentsLists() {
                             <a href="#" className="px-3 leading-tight text-primary hover:text-secondary bg-white border border-primary rounded-r-lg hover:bg-primary  ">Next</a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> */}
 
                     
                     
@@ -104,3 +119,12 @@ export default function AppointmentsLists() {
     </DashboardLayout>
   )
 }
+
+const mapState=(data)=>({
+    data:data
+  });
+  
+
+export default connect(mapState,{
+    fetchAllAppointmentss
+})(AppointmentsLists)
