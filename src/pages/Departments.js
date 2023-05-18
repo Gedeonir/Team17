@@ -80,8 +80,6 @@ function Departments(props) {
 
     }
 
-    console.log(ID)
-
   return (
     <DashboardLayout>
         <div className="lg:w-4/5 w-full mx-auto px-4 py-8 relative">
@@ -89,8 +87,8 @@ function Departments(props) {
             <FeedBack error={props?.data?.oneDepartment?.error} success={props?.data?.oneDepartment?.success} errorMsg={props?.data?.oneDepartment?.error?.response?.data?.message||null} successMsg={props?.data?.oneDepartment?.resp?.message||null}/>
             <form className='relative' onSubmit={(e)=>e.preventDefault()}>
 
-                {props?.data?.createDepartment?.loading && <Loading message="Saving department data"/>}
-                {props?.data?.updateDepartment?.loading && <Loading message="Updating department data"/>}
+                {props?.data?.createDepartment?.loading && <Loading2 message="Saving department data"/>}
+                {props?.data?.updateDepartment?.loading && <Loading2 message="Updating department data"/>}
 
                 <FeedBack error={props?.data?.createDepartment?.error} success={props?.data?.createDepartment?.success} errorMsg={props?.data?.createDepartment?.error?.response?.data?.message||null} successMsg={props?.data?.createDepartment?.resp?.message||null}/>
                 <FeedBack error={props?.data?.updateDepartment?.error} success={props?.data?.updateDepartment?.success} errorMsg={props?.data?.updateDepartment?.error?.response?.data?.message||null} successMsg={props?.data?.updateDepartment?.resp?.message||null}/>
@@ -128,7 +126,7 @@ function Departments(props) {
                     </div>
                 </div>
                 <div className='w-full max-h-96 overflow-y-auto bg-text_secondary relative pb-24'>
-                {props?.data?.allDepartments?.loading?(<Loading message={"Fetching departments"}/>):(
+                {props?.data?.allDepartments?.loading?(<Loading2 message={"Fetching departments"}/>):(
                     props?.data?.allDepartments?.success?(
                         <div>
                             <div className='grid grid-cols-10 gap-2 text-primary sticky top-0 z-10 font-medium bg-secondary py-2 px-2 overflow-x-auto'>
@@ -138,20 +136,21 @@ function Departments(props) {
                                 <div className=''>Fees</div>
                                 <div className='col-span-2'>Actions</div>
                             </div>
-                            {props?.data?.allDepartments?.resp?.data?.departments.map((department,index)=>{
-                                return(
-                                    <div className='grid grid-cols-10 gap-2 text-primary font-medium px-2 overflow-x-auto relative my-4' key={index+1}>
-                                        <div className='my-2'>{index+1}</div>
-                                        <div className=' col-span-4'>{department.departmentName}</div>
-                                        <div className=' col-span-2'>{department.sessionDuration} Min</div>
-                                        <div className=''>{department.fees} RF</div>
-                                        <div className='flex justify-start gap-4 overflow-x-auto col-span-2'>
-                                            <FaEdit size={25} className='cursor-pointer hover:opacity-50 duration-100 ease-in-out' onClick={()=>handleGetDepartment(department._id)}/>
-                                            <AiFillDelete size={25} className='text-danger cursor-pointer hover:opacity-50 duration-100 ease-in-out' onClick={()=>handleOpenDeleteModal(department._id,department.departmentName)}/>
+                            {props?.data?.allDepartments?.resp?.data?.departments.length===0?(<p className='text-center'>No doctors found</p>):(
+                                props?.data?.allDepartments?.resp?.data?.departments.map((department,index)=>{
+                                    return(
+                                        <div className='grid grid-cols-10 gap-2 text-primary font-medium px-2 overflow-x-auto relative my-4' key={index+1}>
+                                            <div className='my-2'>{index+1}</div>
+                                            <div className=' col-span-4'>{department.departmentName}</div>
+                                            <div className=' col-span-2'>{department.sessionDuration} Min</div>
+                                            <div className=''>{department.fees} RF</div>
+                                            <div className='flex justify-start gap-4 overflow-x-auto col-span-2'>
+                                                <FaEdit size={25} className='cursor-pointer hover:opacity-50 duration-100 ease-in-out' onClick={()=>handleGetDepartment(department._id)}/>
+                                                <AiFillDelete size={25} className='text-danger cursor-pointer hover:opacity-50 duration-100 ease-in-out' onClick={()=>handleOpenDeleteModal(department._id,department.departmentName)}/>
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            })}
+                                    )
+                            }))}
                         </div>
                     ):(
                         <ErrorResponse code={props?.data?.allDepartments?.error?.code} message={props?.data?.allDepartments?.error?.message} retryFunction={props.fetchAllDepartments()}/>

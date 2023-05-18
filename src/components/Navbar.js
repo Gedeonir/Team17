@@ -30,9 +30,7 @@ export function NavBarBottom(){
                 <li className='hover:text-btn_primary rounded-lg px-2 py-2'>
                     <Link to="/appointment-form" className='flex gap-2 justify-start'> Book Appointment</Link>
                 </li>
-                <li className='hover:text-btn_primary rounded-lg px-2 py-2'>
-                    <Link to="/Login" className='flex gap-2 justify-start'> Admin</Link>
-                </li>
+                
             </ul>
             <div className='relative w-full col-span-2'>
                 <input type='text' name="search" placeholder='Type in keyword' className='w-full drop-shadow pr-12 rounded-2xl outline-none border border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>
@@ -56,15 +54,15 @@ export default function Navbar() {
             </div>
             <div className='flex justify-start gap-2 border-r border-secondary border-opacity-10 font-bold  flex-wrap lg:text-md'>
                 <GiAmbulance size={24}/>
-                <div class='lg:flex justify-start'>
+                <div className='lg:flex justify-start'>
                     <p>+2507888888888</p>
-                    <p class='text-xs opacity-60 py-1'>(Emergency Services)</p>
+                    <p className='text-xs opacity-60 py-1'>(Emergency Services)</p>
                 </div>
                 
             </div>
             <div className='flex justify-start gap-2 border-r border-secondary border-opacity-10 font-bold '>
                 <BsVirus size={24}/>
-                <p class='text-sm'>COVID-19 UPDATES</p>
+                <p className='text-sm'>COVID-19 UPDATES</p>
             </div>
             <div className='flex justify-between gap-2 border-secondary border-opacity-10 font-bold'>
                 <FaFacebookF size={20} className='border rounded-full text-sm p-1'/>

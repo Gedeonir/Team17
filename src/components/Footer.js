@@ -1,5 +1,5 @@
 import React from 'react'
-import Logos from '../assets/Logos.PNG'
+import LogoFooter from '../assets/LogoFooter.png'
 import { Link } from 'react-router-dom'
 import {BsDashLg} from 'react-icons/bs'
 
@@ -11,7 +11,7 @@ export default function Footer() {
                 <h3 className='font-bold mb-3'>About SevenTeen</h3>
                 <p className='text-justify'>Seeventeen is a private hospital located in the capital city of Rwanda. We are dedicated to providing our patients with the best care at all times during their hospital stay.</p>
                 <div className='mt-3 w-48'> 
-                    <img src={Logos} className='w-full h-full' alt='logo'/>
+                    <img src={LogoFooter} className='w-full h-full' alt='logo'/>
                 </div>
             </div>
             <div class='w-full'>

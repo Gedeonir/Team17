@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaClosedCaptioning } from "react-icons/fa";
 import { Loading2 } from "./Loading";
 import { BiErrorCircle } from 'react-icons/bi'
-
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
 
@@ -17,6 +17,9 @@ const Login = () => {
     errorMsg:''
   });
 
+  const location=useLocation()
+
+  console.log(location);
 
    const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -72,8 +75,9 @@ const Login = () => {
 
         <form onSubmit={handleSubmit}  class="flex-justify-between lg:px-8 px-2 py-8 text-primary ">
 
-        <h1 class=" text-2xl font-bold mb-6 text-center">Login as an Admin User</h1>
-        {Loading && <Loading2 message="Signing in......."/>}
+          <h1 class=" text-2xl font-bold mb-6 text-center">Login as an Admin User</h1>
+          {location.state.message && <p className="text-danger font-bold text-center">{location.state.message}</p>}
+          {Loading && <Loading2 message="Signing in......."/>}
           {error.Error&& <div className='flex justify-start gap-2 bg-danger  px-4 py-2 bg-opacity-20 rounded-t-2xl rounded-r-2xl'><BiErrorCircle size={25}/><p>{error.errorMsg}</p></div>}
           <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" htmlFor="email">
