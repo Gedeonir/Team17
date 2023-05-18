@@ -30,9 +30,7 @@ export function NavBarBottom(){
                 <li className='hover:text-btn_primary rounded-lg px-2 py-2'>
                     <Link to="/appointment-form" className='flex gap-2 justify-start'> Book Appointment</Link>
                 </li>
-                <li className='hover:text-btn_primary rounded-lg px-2 py-2'>
-                    <Link to="/Login" className='flex gap-2 justify-start'> Admin</Link>
-                </li>
+                
             </ul>
             <div className='relative w-full col-span-2'>
                 <input type='text' name="search" placeholder='Type in keyword' className='w-full drop-shadow pr-12 rounded-2xl outline-none border border-secondary' onChange={(e)=>{setSearchWord(e.target.value)}}/>

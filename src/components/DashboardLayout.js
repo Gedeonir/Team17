@@ -33,14 +33,12 @@ export default function DashboardLayout({children,open,setOpen}) {
 
     React.useEffect(() => {
         if (!token) {
-          navigate("/login");
-          console.log("You must sign in first!")
+          navigate("/login",{state:{message:'You must sign in first!'}});
         }else{
           const decodedJwt = parseToken(token);
           if (decodedJwt.exp * 1000 < Date.now()) {
             sessionStorage.clear();
-            navigate("/login");
-            console.log("Your session expired!");
+            navigate("/login",{state:{message:'Your session expired!'}});
           }
         }
       }, [token])
