@@ -21,12 +21,12 @@ export default function Loading(props) {
 
 export function Loading2(props) {
   return (
-    <div className='w-full'>
-      <div className='flex lg:w-1/3 w-4/5 text-primary bg-secondary px-2 rounded-lg relative'>
+    <div className='w-full bg-bar_yellow rounded-lg'>
+      <div className='flex lg:w-1/3 w-4/5 text-primary px-2 rounded-lg relative'>
           <div className='relative w-8 h-8'>
               <img src={loading2} className='w-full h-full'/>
           </div>
-          <div className='w-full text-lg font-medium'>
+          <div className='w-full text-lg font-medium px-4'>
             <label>{props.message}</label>
           </div>
       </div>

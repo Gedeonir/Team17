@@ -3,6 +3,7 @@ import Admin from '../img/Admin.png'
 import { useNavigate } from "react-router-dom";
 import { FaClosedCaptioning } from "react-icons/fa";
 import { Loading2 } from "./Loading";
+import { BiErrorCircle } from 'react-icons/bi'
 
 
 const Login = () => {
@@ -11,6 +12,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [Loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [error,setError]=useState({
+    Error:false,
+    errorMsg:''
+  });
 
 
    const handleEmailChange = (e) => {
@@ -42,6 +47,11 @@ const Login = () => {
   } else {
     // Login failed, display error message
     setLoading(false)
+    setError({
+      ...error,
+      Error:true,
+      errorMsg:data.message
+    })
     console.log(data.message);
   }
     }
@@ -64,6 +74,7 @@ const Login = () => {
 
         <h1 class=" text-2xl font-bold mb-6 text-center">Login as an Admin User</h1>
         {Loading && <Loading2 message="Signing in......."/>}
+          {error.Error&& <div className='flex justify-start gap-2 bg-danger  px-4 py-2 bg-opacity-20 rounded-t-2xl rounded-r-2xl'><BiErrorCircle size={25}/><p>{error.errorMsg}</p></div>}
           <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" htmlFor="email">
               Email
