@@ -25,10 +25,13 @@ export function NavBarBottom(){
                     <Link to="/doctors" className='flex gap-2 justify-start'> Our doctors</Link>
                 </li>
                 <li className='hover:text-btn_primary px-2 py-2'>
-                    <Link to="/login" className='flex gap-2 justify-start'> Login</Link>
+                    <Link to="/Login" className='flex gap-2 justify-start'> Login</Link>
                 </li>
                 <li className='hover:text-btn_primary rounded-lg px-2 py-2'>
                     <Link to="/appointment-form" className='flex gap-2 justify-start'> Book Appointment</Link>
+                </li>
+                <li className='hover:text-btn_primary rounded-lg px-2 py-2'>
+                    <Link to="/Login" className='flex gap-2 justify-start'> Admin</Link>
                 </li>
             </ul>
             <div className='relative w-full col-span-2'>
