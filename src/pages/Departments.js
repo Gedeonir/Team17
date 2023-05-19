@@ -123,8 +123,7 @@ function Departments(props) {
                     </div>
                 </div>
                 <div className='w-full max-h-96 overflow-y-auto bg-text_secondary relative pb-24'>
-                {props?.data?.allDepartments?.loading?(<Loading2 message={"Fetching departments"}/>):(
-                    props?.data?.allDepartments?.success?(
+                    {props?.data?.allDepartments?.success?(
                         <div>
                             <div className='grid grid-cols-10 gap-2 text-primary sticky top-0 z-10 font-medium bg-secondary py-2 px-2 overflow-x-auto'>
                                 <div className=''>#ID</div>
@@ -149,8 +148,7 @@ function Departments(props) {
                         </div>
                     ):(
                         <ErrorResponse code={props?.data?.allDepartments?.error?.code} message={props?.data?.allDepartments?.error?.message} retryFunction={props.fetchAllDepartments()}/>
-                    )
-                )}
+                    )}
                 </div>
             </div>
             
