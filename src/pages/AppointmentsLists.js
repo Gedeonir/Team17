@@ -15,7 +15,7 @@ function AppointmentsLists(props) {
 
     useEffect(()=>{
         props.fetchAllAppointmentss()
-    },[props?.data?.createAppointment.success])
+    },[])
 
 
   return (
