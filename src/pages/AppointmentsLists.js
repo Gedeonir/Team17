@@ -56,9 +56,10 @@ function AppointmentsLists(props) {
                         <div className='py-1  col-span-2'>Doctor</div>
                         <div className='py-1'>Date</div>
                         <div className='py-1 '>Session</div>
-                        <div className='py-1 '>Status</div>
+                        {/* <div className='py-1 '>Status</div> */}
                     </div>
-                    {props?.data?.allAppointments?.success?(
+                    {props?.data?.allAppointments?.loading?(<Loading2 message="Fetching appointments"/>):(
+                        props?.data?.allAppointments?.success?(
                             props?.data?.allAppointments?.resp?.data?.allApointments.length===0?(<p className='text-center'>No departments found</p>):(
                                 props?.data?.allAppointments?.resp?.data?.allApointments.map((appointment,index)=>{
                                     return(
@@ -74,7 +75,7 @@ function AppointmentsLists(props) {
                                             </div>
                                             <div className='py-1'>{appointment.sessionDate}</div>
                                             <div className='py-1 mr-2'>{appointment.sessionTime}</div>
-                                            <div className='py-1 italic font-medium text-background_secondary'>{appointment.status}</div>
+                                            {/* <div className='py-1 italic font-medium text-background_secondary'>{appointment.status}</div> */}
                                             {/* <RxDotFilled size={24} className='absolute right-0 top-0'/> */}
                                         </div>
                                     )
@@ -82,7 +83,8 @@ function AppointmentsLists(props) {
                             )
                         ):(
                             <ErrorResponse code={props?.data?.allAppointments?.error?.code} message={props?.data?.allAppointments?.error?.message} retryFunction={props.fetchAllAppointmentss()}/>
-                        )}                    
+                        )
+                    )}                    
                     {/* <nav aria-label="Pagination" className='my-4'>
                         <ul className="inline-flex -space-x-px">
                             <li>
