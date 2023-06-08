@@ -11,7 +11,7 @@ export default function Homepage() {
 
   return (
     <div class=''>
-        <Navbar/>
+        {/* <Navbar/> */}
         <NavBarBottom/>
         <div className='min-h-screen relative w-full'>
             <div className='h-96 w-full text-center relative bg-[url(https://api.brusselstimes.com/wp-content/uploads/2021/02/rwanda-hospital-c-city-of-kigali.jpg)] bg-cover bg-no-repeat'>
