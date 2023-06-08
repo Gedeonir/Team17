@@ -19,6 +19,7 @@ export default function DoctorCard({doctor,handleOpenDeleteModal}) {
             <div className="mt-1 p-2 text-primary">
                 <h2 className="font-bold">Dr. {doctor.firstName} {doctor.lastName}</h2>
                 <p className="mt-1 text-sm text-slate-400">{doctor.departmentName}</p>
+                <p className="mt-1 text-bar_yellow font-bold">Every {doctor.availableDays}</p>
             </div>
         </div>
         {location.pathname==="/doctorsUsers" &&

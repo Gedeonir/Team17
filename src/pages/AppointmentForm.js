@@ -192,11 +192,11 @@ function AppointmentForm(props) {
                     <div>
                         <label >Choose date</label>
                         <input type='date' name="search" className='w-full bg-secondary rounded-lg outline-none border-none' required
-                        // defaultValue={new Intl.DateTimeFormat("en-CA", {
-                        //     year: "numeric",
-                        //     month: "2-digit",
-                        //     day: "2-digit",
-                        //   }).format(formData.date)}
+                        min={new Intl.DateTimeFormat("en-CA", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                          }).format(new Date())}
                         onChange={(e)=>{
                             setFormData({
                                 ...formData,
