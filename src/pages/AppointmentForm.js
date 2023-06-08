@@ -102,7 +102,7 @@ function AppointmentForm(props) {
     console.log(minutes);
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <NavBarBottom/>
         <div className='py-12 bg-background_secondary px-8'>
             <h1 className='font-bold text-2xl text-text_secondary'>Make Appoinment</h1>
